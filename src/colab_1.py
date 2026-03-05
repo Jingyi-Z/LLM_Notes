@@ -1,7 +1,9 @@
-import os
-from huggingface_hub import login
-# Set your Hugging Face token as an environment variable: $env:HF_TOKEN="your_token_here"
-login(token=os.getenv("HF_TOKEN"))
+# LOGGING NOW COMPLETED IN GOOGLE COLAB NOTEBOOK (colab_1_run.ipynb) INSTEAD OF THIS .PY FILE
+# Login to Hugging Face Hub using your token (set as environment variable)
+# import os
+# from huggingface_hub import login
+# # Set your Hugging Face token as an environment variable: $env:HF_TOKEN="your_token_here"
+# login(token=os.getenv("HF_TOKEN"))
 
 from transformers import AutoTokenizer, AutoModelForCausalLM
 model_id = "meta-llama/Llama-3.2-3B-Instruct" # Change to your desired model
