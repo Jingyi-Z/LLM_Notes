@@ -6,9 +6,11 @@
 # login(token=os.getenv("HF_TOKEN"))
 
 # MODEL LOADING AND TOKENIZER SETTING
+import os
 from transformers import AutoTokenizer, AutoModelForCausalLM
+
 model_id = "meta-llama/Llama-3.2-3B-Instruct" # Change to your desired model
-cache_dir = "./hf_cache"
+cache_dir = os.environ.get("TRANSFORMERS_CACHE", "/content/drive/MyDrive/hf_cache/transformers")
 
 tokenizer = AutoTokenizer.from_pretrained(model_id, cache_dir=cache_dir)
 model = AutoModelForCausalLM.from_pretrained(model_id, cache_dir=cache_dir)
