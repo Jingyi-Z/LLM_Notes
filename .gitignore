@@ -4,5 +4,17 @@ __pycache__/
 .ipynb_checkpoints/
 .env
 *.code-workspace
-
 *.code-workspace.local
+
+# Large artifacts
+artifacts/
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.npy
+*.npz
+
+# Optional: ignore bulky logs/checkpoints anywhere
+checkpoints/
+wandb/
