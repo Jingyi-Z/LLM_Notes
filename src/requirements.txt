@@ -1,0 +1,12 @@
+numpy
+pandas
+matplotlib
+
+transformers
+scikit-learn
+torch
+tensorflow
+huggingface_hub
+
+jupyter
+ipykernel
