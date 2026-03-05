@@ -4,7 +4,7 @@ from huggingface_hub import login
 login(token=os.getenv("HF_TOKEN"))
 
 from transformers import AutoTokenizer, AutoModelForCausalLM
-model_id = "meta-llama/llama-3.2-3B_Instruct" # Change to your desired model
+model_id = "meta-llama/Llama-3.2-3B-Instruct" # Change to your desired model
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 model = AutoModelForCausalLM.from_pretrained(model_id)
 print("Tokenizer and model loaded successfully!")
