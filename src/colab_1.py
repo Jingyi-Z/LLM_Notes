@@ -8,8 +8,10 @@
 # MODEL LOADING AND TOKENIZER SETTING
 from transformers import AutoTokenizer, AutoModelForCausalLM
 model_id = "meta-llama/Llama-3.2-3B-Instruct" # Change to your desired model
-tokenizer = AutoTokenizer.from_pretrained(model_id)
-model = AutoModelForCausalLM.from_pretrained(model_id)
+cache_dir = "./hf_cache"
+
+tokenizer = AutoTokenizer.from_pretrained(model_id, cache_dir=cache_dir)
+model = AutoModelForCausalLM.from_pretrained(model_id, cache_dir=cache_dir)
 print("Tokenizer and model loaded successfully!")
 
 # Check tokenizer vocab size
