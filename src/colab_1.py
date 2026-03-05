@@ -62,6 +62,17 @@ for i in range(top_k):
     print(f"Token ID: {token_id}, Token: '{token_str}', Probability: {token_prob:.4f}")
 
 # Generate text
-output = model.generate(input_ids, max_length=50, num_return_sequences=1)
-generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
-print(f"Prompt: '{prompt}'\nGenerated Text: '{generated_text}'")
+prompt = "What is the capital of France?"
+max_length = 16
+
+for t in range(max_length):
+    input_ides = tokenizer.encode(prompt, return_tensors="pt")
+    output = model(input_ides)
+    next_token_id = torch.argmax(output.logits[:, -1, :], dim=-1).item() # Get the ID of the most likely next token
+    next_token_str = tokenizer.decode([next_token_id]) # Decode the token ID to a string
+    prompt += next_token_str # Append the predicted token to the prompt for the next iteration
+print(f"Prompt: '{prompt}'\nGenerated text: '{prompt}'")
+
+# output = model.generate(input_ids, max_length=50, num_return_sequences=1)
+# generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
+# print(f"Prompt: '{prompt}'\nGenerated Text: '{generated_text}'")
